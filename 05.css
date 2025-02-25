@@ -1,0 +1,178 @@
+/* CSS Variables */
+:root {
+  --primary-font: 'Poppins', sans-serif;
+  --secondary-font: 'Roboto', sans-serif;
+  --accent-color: #ff6f61; /* coral-ish accent */
+  --primary-bg-color: #141e30; /* dark navy-blue for contrast */
+  --gradient-start: #243B55; /* dark blue */
+  --gradient-end: #141E30;  /* even darker blue */
+  --border-color: rgba(255, 255, 255, 0.2);
+  --light-border-color: rgba(255, 255, 255, 0.1);
+  --text-color: #fff;
+  --secondary-text-color: #ddd;
+  --spacing-sm: 10px;
+  --spacing-md: 15px;
+  --spacing-lg: 20px;
+  --border-radius: 5px;
+}
+
+/* Import only necessary font weights */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
+
+/* Global Reset */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Animated Gradient Background */
+@keyframes gradientBG {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+body {
+  font-family: var(--primary-font);
+  margin: 0;
+  padding: 0;
+  line-height: 1.6;
+  color: var(--text-color);
+  background: linear-gradient(-45deg, var(--gradient-start), var(--gradient-end), var(--gradient-start));
+  background-size: 400% 400%;
+  animation: gradientBG 15s ease infinite;
+}
+
+/* Header */
+header {
+  background-color: transparent;
+  padding: var(--spacing-lg);
+  text-align: center;
+  border-bottom: 1px solid var(--border-color);
+}
+
+/* Main Content */
+main {
+  padding: var(--spacing-lg);
+}
+
+/* Sections */
+.study-notes,
+.task-section,
+.print-section,
+.comment-section {
+  margin-bottom: var(--spacing-lg);
+}
+
+/* Learning Cards */
+.learning-card {
+  background-color: rgba(0, 0, 0, 0.5);
+  border: 1px solid var(--border-color);
+  padding: var(--spacing-lg);
+  border-radius: var(--border-radius);
+  margin-bottom: var(--spacing-lg);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+.word-container {
+  margin-bottom: var(--spacing-sm);
+}
+
+.word {
+  font-weight: 700;
+  margin-bottom: 5px;
+  font-size: 1.1em;
+}
+
+.verb-forms {
+  font-style: italic;
+  margin-bottom: var(--spacing-sm);
+  color: var(--secondary-text-color);
+}
+
+.english-transliteration,
+.hindi-transliteration,
+.english-translation {
+  margin-top: var(--spacing-sm);
+  color: var(--secondary-text-color);
+}
+
+/* Task, Instructions, Motivation */
+.task,
+.instructions,
+.motivation {
+  background-color: rgba(0, 0, 0, 0.4);
+  border: 1px solid var(--light-border-color);
+  padding: var(--spacing-md);
+  margin-bottom: var(--spacing-sm);
+  border-radius: var(--border-radius);
+}
+
+/* Footer */
+.page-footer {
+  background-color: transparent;
+  padding: var(--spacing-sm);
+  text-align: center;
+  border-top: 1px solid var(--border-color);
+}
+
+/* Comment Section */
+.comment-section textarea {
+  width: 100%;
+  padding: var(--spacing-sm);
+  margin-bottom: var(--spacing-sm);
+  border: 1px solid var(--border-color);
+  border-radius: 3px;
+  resize: vertical;
+  font-family: var(--primary-font);
+  background-color: rgba(255,255,255,0.1);
+  color: var(--text-color);
+}
+
+.comment {
+  border-bottom: 1px solid var(--light-border-color);
+  padding: var(--spacing-sm);
+  margin-bottom: var(--spacing-sm);
+}
+
+/* Print Section */
+.print-section {
+  text-align: center;
+}
+
+/* Buttons */
+button {
+  color: #fff;
+  background: var(--accent-color);
+  border: 1px solid var(--accent-color);
+  padding: var(--spacing-sm) var(--spacing-md);
+  border-radius: var(--border-radius);
+  font-family: var(--primary-font);
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+button:hover {
+  background: #e65c50;
+}
+
+/* Responsive Considerations */
+@media (max-width: 768px) {
+  main {
+    padding: var(--spacing-md);
+  }
+
+  .learning-card,
+  .task,
+  .instructions,
+  .motivation {
+    padding: var(--spacing-md);
+  }
+}
