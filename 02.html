@@ -1,0 +1,1010 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>English Speaking Course - Day 2</title>
+  <link rel="stylesheet" href="02.css">
+  <script>
+    function playSound(letter) {
+      let audio = new Audio(`sounds/${letter}.mp3`);
+      audio.play();
+    }
+    document.addEventListener("DOMContentLoaded", function () {
+      const commentForm = document.getElementById("commentForm");
+      const commentInput = document.getElementById("commentInput");
+      const commentList = document.getElementById("commentList");
+
+      // Load stored comments from localStorage
+      const storedComments = JSON.parse(localStorage.getItem("comments")) || [];
+      storedComments.forEach(comment => addCommentToPage(comment));
+
+      commentForm.addEventListener("submit", function (e) {
+        e.preventDefault();
+
+        const commentText = commentInput.value.trim();
+        if (commentText === "") return;
+
+        // Save comment to localStorage
+        storedComments.push(commentText);
+        localStorage.setItem("comments", JSON.stringify(storedComments));
+
+        // Add comment to page
+        addCommentToPage(commentText);
+        commentInput.value = ""; // Clear input field
+      });
+
+      function addCommentToPage(comment) {
+        const commentDiv = document.createElement("div");
+        commentDiv.classList.add("comment");
+        commentDiv.textContent = comment;
+        commentList.appendChild(commentDiv);
+      }
+    });
+
+  </script>
+</head>
+
+<body>
+  <header>
+    <h1>English Speaking Course - Day 2</h1>
+    <p>आज आप A से Z तक के Letters के Phonic Sounds सीखेंगे।</p>
+  </header>
+
+  <main>
+    <section class="phonics-section">
+      <h2>Phonic Sounds of A to Z</h2>
+      <p>Learn the correct pronunciation of each letter.</p>
+
+      <div class="letter">
+        <p><strong>A:</strong> /æ/ as in Apple
+          <button onclick="playSound('A')">
+            🔊
+          </button>
+        </p>
+        <h2>A के Phonic Sounds –</h2>
+        <ul>
+          <li>1. अ – Alone, Agree <button onclick="playSound('A1')">🔊</button></li>
+          <li>2. आ – Start, After <button onclick="playSound('A2')">🔊</button></li>
+          <li>3. ए – Name, Fame <button onclick="playSound('A3')">🔊</button></li>
+          <li>4. ऐ – Angry, Animal, Apple <button onclick="playSound('A4')">🔊</button></li>
+          <li>5. एअ – Dare, Rare <button onclick="playSound('A5')">🔊</button></li>
+          <li>6. ऑ – Tall, Fall <button onclick="playSound('A6')">🔊</button></li>
+        </ul>
+
+        <div class="note">
+          नोट – जब भी किसी वाक्य में “a” आता है तो इसका Phonic Sound (अ) होता है।
+        </div>
+
+        <p><strong>Example:</strong></p>
+        <p>I am a student.</p>
+        <p>❌ आय ऐम ए स्टूडेंट। – Incorrect</p>
+        <p>✅ आय ऐम अ स्टूडेंट। – Correct</p>
+      </div>
+
+      <div class="letter">
+        <p><strong>B:</strong> /b/ as in Ball
+          <button onclick="playSound('B')">🔊</button>
+        </p>
+        <h2>B के Phonic Sounds –</h2>
+        <p>B लैटर का एक ही Phonic Sound होता है – <strong>‘ब’</strong></p>
+
+        <ul>
+          <li>Ball (बॉल) = गेंद <button onclick="playSound('Ball')">🔊</button></li>
+          <li>Bowl (बोल) = कटोरी / गेंद फेकना <button onclick="playSound('Bowl')">🔊</button></li>
+        </ul>
+
+        <p><strong>Example:</strong></p>
+        <p>✅ He is bowling. – Correct <button onclick="playSound('Bowling')">🔊</button></p>
+        <p>❌ He is balling. – Incorrect</p>
+
+        <div class="note">
+          <strong>Note:</strong> "Bowl" और "Ball" के उच्चारण में अंतर होता है।
+          "Bowl" (बोल) का मतलब होता है कटोरी या गेंद फेंकना, जबकि "Ball" (बॉल) का मतलब होता है गेंद।
+          गलत उच्चारण से अर्थ बदल सकता है, इसलिए सही phonic sound का प्रयोग करें।
+        </div>
+      </div>
+
+      <div class="letter">
+        <p><strong>C:</strong> /k/ or /s/ as in Cat & City
+          <button onclick="playSound('C')">🔊</button>
+        </p>
+        <h2>C के Phonic Sounds –</h2>
+        <p>C लैटर के दो Phonic Sound होते हैं। पहला <strong>‘क’</strong> और दूसरा <strong>‘स’</strong>।</p>
+
+        <h3>👉 C का Sound ‘स’ होता है जब:</h3>
+        <p>जब भी C के बाद e, i या y आए, तो C का sound ‘स’ होगा।</p>
+        <ul>
+          <li>Center – C के बाद e आया → <strong>सेंटर</strong>
+            <button onclick="playSound('Center')">🔊</button>
+          </li>
+          <li>Price – C के बाद e आया → <strong>प्राइस</strong>
+            <button onclick="playSound('Price')">🔊</button>
+          </li>
+          <li>Century – C के बाद e आया → <strong>सेंचुरी</strong>
+            <button onclick="playSound('Century')">🔊</button>
+          </li>
+          <li>City – C के बाद i आया → <strong>सिटी</strong>
+            <button onclick="playSound('City')">🔊</button>
+          </li>
+          <li>Circle – C के बाद i आया → <strong>सर्कल</strong>
+            <button onclick="playSound('Circle')">🔊</button>
+          </li>
+          <li>Bicycle – C के बाद y आया → <strong>बाइसिकल</strong>
+            <button onclick="playSound('Bicycle')">🔊</button>
+          </li>
+          <li>Cylinder – C के बाद y आया → <strong>सिलेंडर</strong>
+            <button onclick="playSound('Cylinder')">🔊</button>
+          </li>
+        </ul>
+
+        <h3>👉 C का Sound ‘क’ होता है जब:</h3>
+        <p>अगर C के बाद e, i, y के अलावा कोई और अक्षर आए, तो C का sound ‘क’ होगा।</p>
+        <ul>
+          <li>Cat – <strong>कैट</strong>
+            <button onclick="playSound('Cat')">🔊</button>
+          </li>
+          <li>Control – <strong>कन्ट्रोल</strong>
+            <button onclick="playSound('Control')">🔊</button>
+          </li>
+          <li>College – <strong>कॉलेज</strong>
+            <button onclick="playSound('College')">🔊</button>
+          </li>
+          <li>Camera – <strong>कैमरा</strong>
+            <button onclick="playSound('Camera')">🔊</button>
+          </li>
+          <li>Actor – <strong>ऐक्टर</strong>
+            <button onclick="playSound('Actor')">🔊</button>
+          </li>
+          <li>Back – <strong>बैक</strong>
+            <button onclick="playSound('Back')">🔊</button>
+          </li>
+        </ul>
+
+        <div class="note">
+          <strong>Note:</strong>
+          बहुत से लोग "C" को हमेशा "क" की तरह पढ़ते हैं, लेकिन ऐसा नहीं है।
+          अगर C के बाद e, i या y आए, तो इसका उच्चारण "स" होगा, और अगर कोई और अक्षर आए, तो "क" होगा।
+          गलत उच्चारण से अर्थ बदल सकता है, इसलिए सही phonic sound का अभ्यास करें।
+        </div>
+      </div>
+      <div class="letter">
+        <p><strong>D:</strong> /d/ as in Dog
+          <button onclick="playSound('D')">🔊</button>
+        </p>
+        <h2>D के Phonic Sounds –</h2>
+        <p>D letter का एक Phonic Sound होता है – <strong>‘ड’</strong></p>
+
+        <ul>
+          <li>Down – <strong>डाउन</strong>
+            <button onclick="playSound('Down')">🔊</button>
+          </li>
+          <li>Under – <strong>अंडर</strong>
+            <button onclick="playSound('Under')">🔊</button>
+          </li>
+          <li>Dog – <strong>डॉग</strong>
+            <button onclick="playSound('Dog')">🔊</button>
+          </li>
+          <li>Mad – <strong>मेड</strong>
+            <button onclick="playSound('Mad')">🔊</button>
+          </li>
+        </ul>
+
+        <div class="note">
+          <strong>Note:</strong>
+          कई लोग **Under** को **उंडर** पढ़ते हैं, लेकिन सही उच्चारण **अंडर** है।
+          इसी तरह, **Mad** को कई लोग **मैड** बोलते हैं, लेकिन सही उच्चारण **मेड** है।
+        </div>
+      </div>
+      <div class="letter">
+        <p><strong>E:</strong> /e/ or /i:/ as in English & He
+          <button onclick="playSound('E')">🔊</button>
+        </p>
+        <h2>E के Phonic Sounds –</h2>
+        <p>E letter के चार अलग – अलग Phonic Sounds होते हैं:</p>
+
+        <ul>
+          <li>इ – English (<strong>इंग्लिश</strong>), Eleven (<strong>इलैवन</strong>)
+            <button onclick="playSound('English')">🔊</button>
+          </li>
+          <li>ई – He (<strong>ही</strong>), Be (<strong>बी</strong>)
+            <button onclick="playSound('He')">🔊</button>
+          </li>
+          <li>ऐ – Enter (<strong>ऐन्टर</strong>), Enjoy (<strong>ऐन्जॉय</strong>)
+            <button onclick="playSound('Enter')">🔊</button>
+          </li>
+          <li>अ – Meter (<strong>मीटर</strong>), Merchant (<strong>मर्चेंट</strong>)
+            <button onclick="playSound('Meter')">🔊</button>
+          </li>
+        </ul>
+
+        <div class="note">
+          <strong>Note:</strong>
+          बहुत से लोग **English** को **एंग्लिश** बोलते हैं, लेकिन सही उच्चारण **इंग्लिश** है।
+          **Enter** को **एन्टर** नहीं, बल्कि **ऐन्टर** कहना चाहिए।
+        </div>
+      </div>
+      <div class="letter">
+        <p><strong>F:</strong> /f/ as in Fan
+          <button onclick="playSound('F')">🔊</button>
+        </p>
+        <h2>F के Phonic Sounds –</h2>
+        <p>F letter का एक ही Phonic Sound होता है – <strong>‘फ’</strong></p>
+
+        <ul>
+          <li>Fan – <strong>फैन</strong>
+            <button onclick="playSound('Fan')">🔊</button>
+          </li>
+          <li>Film – <strong>फ़िल्म</strong>
+            <button onclick="playSound('Film')">🔊</button>
+          </li>
+          <li>Fantastic – <strong>फैंटास्टिक</strong>
+            <button onclick="playSound('Fantastic')">🔊</button>
+          </li>
+        </ul>
+
+        <div class="note">
+          <strong>Note:</strong>
+          **Film** को सही से **फ़िल्म** बोलें, बहुत से लोग इसे **फील्म** बोलते हैं, जो गलत है।
+          **Fantastic** का उच्चारण सही ढंग से **फैंटास्टिक** करें।
+        </div>
+      </div>
+      <div class="letter">
+        <p><strong>G:</strong> /g/ or /ʤ/ as in Goa & Gym
+          <button onclick="playSound('G')">🔊</button>
+        </p>
+        <h2>G के Phonic Sounds –</h2>
+        <p>G letter के दो Phonic Sounds होते हैं:</p>
+
+        <h3>जब भी G के बाद e, i या y आये तो G का sound ‘ज’ होता है।</h3>
+        <ul>
+          <li>Age – <strong>एज</strong>
+            <button onclick="playSound('Age')">🔊</button>
+          </li>
+          <li>Change – <strong>चेंज</strong>
+            <button onclick="playSound('Change')">🔊</button>
+          </li>
+          <li>Magic – <strong>मैजिक</strong>
+            <button onclick="playSound('Magic')">🔊</button>
+          </li>
+          <li>Gym – <strong>जिम</strong>
+            <button onclick="playSound('Gym')">🔊</button>
+          </li>
+          <li>Egypt – <strong>इजिप्ट</strong>
+            <button onclick="playSound('Egypt')">🔊</button>
+          </li>
+        </ul>
+
+        <h3>जब G के बाद e, i या y के अलावा कोई और अक्षर आये तो G का sound ‘ग’ होता है।</h3>
+        <ul>
+          <li>Goa – <strong>गोवा</strong>
+            <button onclick="playSound('Goa')">🔊</button>
+          </li>
+          <li>Gale – <strong>गेल</strong>
+            <button onclick="playSound('Gale')">🔊</button>
+          </li>
+          <li>Agriculture – <strong>ऐग्रीकल्चर</strong>
+            <button onclick="playSound('Agriculture')">🔊</button>
+          </li>
+        </ul>
+
+        <div class="note">
+          <strong>Note:</strong>
+          **Gym** का सही उच्चारण **जिम** होता है, इसे **गिम** मत कहें।
+          **Magic** का उच्चारण **मैजिक** करें, कई लोग गलती से इसे **मागिक** पढ़ते हैं।
+          **Goa** में G का उच्चारण **ग** होता है, इसे **जोआ** मत कहें।
+        </div>
+      </div>
+      <div class="letter">
+        <p><strong>H:</strong> /h/ as in Hotel
+          <button onclick="playSound('H')">🔊</button>
+        </p>
+        <h2>H के Phonic Sounds –</h2>
+        <p>H लैटर का Phonic Sound <strong>‘ह’</strong> होता है।</p>
+
+        <ul>
+          <li>Hello – <strong>हैलो</strong>
+            <button onclick="playSound('Hello')">🔊</button>
+          </li>
+          <li>Hotel – <strong>होटल</strong>
+            <button onclick="playSound('Hotel')">🔊</button>
+          </li>
+        </ul>
+
+        <h3>H कई शब्दों में Silent होता है:</h3>
+        <h4>Silent H (जब O से पहले या C, W, R, G के बाद आता है)</h4>
+        <ul>
+          <li>Hour – <strong>आवर</strong> (घंटा)
+            <button onclick="playSound('Hour')">🔊</button>
+          </li>
+          <li>Honest – <strong>ऑनेस्ट</strong> (ईमानदार)
+            <button onclick="playSound('Honest')">🔊</button>
+          </li>
+          <li>Honour – <strong>ऑनर</strong> (सम्मान)
+            <button onclick="playSound('Honour')">🔊</button>
+          </li>
+          <li>Chemistry – <strong>कैमिस्ट्री</strong>
+            <button onclick="playSound('Chemistry')">🔊</button>
+          </li>
+          <li>Technology – <strong>टेक्नोलॉजी</strong>
+            <button onclick="playSound('Technology')">🔊</button>
+          </li>
+          <li>White – <strong>वाइट</strong>
+            <button onclick="playSound('White')">🔊</button>
+          </li>
+          <li>Whisper – <strong>विस्पर</strong>
+            <button onclick="playSound('Whisper')">🔊</button>
+          </li>
+          <li>Rhinoceros – <strong>राइनोसरस</strong> (गैंडा)
+            <button onclick="playSound('Rhinoceros')">🔊</button>
+          </li>
+          <li>Rhythm – <strong>रिदम</strong> (लय/ताल)
+            <button onclick="playSound('Rhythm')">🔊</button>
+          </li>
+          <li>Ghost – <strong>गोस्ट</strong> (भूत)
+            <button onclick="playSound('Ghost')">🔊</button>
+          </li>
+          <li>Ghastly – <strong>गैस्ली/गास्टली</strong> (डरावना / भयंकर)
+            <button onclick="playSound('Ghastly')">🔊</button>
+          </li>
+        </ul>
+
+        <div class="note">
+          <strong>Note:</strong>
+          **Who** शब्द इस रूल का अपवाद है। इसमें "H" Silent नहीं होता।
+          **Hour** को **हावर** मत कहें, सही उच्चारण **आवर** है।
+          **Ghost** को **ग्होस्ट** नहीं, बल्कि **गोस्ट** कहें।
+          **Whisper** का सही उच्चारण **विस्पर** है, इसे **व्हिस्पर** मत कहें।
+        </div>
+      </div>
+      <div class="letter">
+        <p><strong>I:</strong> /aɪ/ or /ɪ/ or /ʌ/ as in Like, Sit, First
+          <button onclick="playSound('I')">🔊</button>
+        </p>
+        <h2>I के Phonic Sounds –</h2>
+        <p>I के चार Phonic Sound होते हैं:</p>
+
+        <h3>1️⃣ जब I का उच्चारण **आइ** होता है:</h3>
+        <ul>
+          <li>Like – <strong>लाइक</strong>
+            <button onclick="playSound('Like')">🔊</button>
+          </li>
+          <li>Hide – <strong>हाइड</strong>
+            <button onclick="playSound('Hide')">🔊</button>
+          </li>
+        </ul>
+
+        <h3>2️⃣ जब I का उच्चारण **आय** होता है:</h3>
+        <ul>
+          <li>Hire – <strong>हायर</strong>
+            <button onclick="playSound('Hire')">🔊</button>
+          </li>
+          <li>Expire – <strong>एक्सपायर</strong>
+            <button onclick="playSound('Expire')">🔊</button>
+          </li>
+        </ul>
+
+        <h3>3️⃣ जब I का उच्चारण **इ** होता है:</h3>
+        <ul>
+          <li>Sit – <strong>सिट</strong>
+            <button onclick="playSound('Sit')">🔊</button>
+          </li>
+          <li>Still – <strong>स्टिल</strong>
+            <button onclick="playSound('Still')">🔊</button>
+          </li>
+        </ul>
+
+        <h3>4️⃣ जब I का उच्चारण **अ** होता है:</h3>
+        <ul>
+          <li>First – <strong>फर्स्ट</strong>
+            <button onclick="playSound('First')">🔊</button>
+          </li>
+          <li>Shirt – <strong>शर्ट</strong>
+            <button onclick="playSound('Shirt')">🔊</button>
+          </li>
+        </ul>
+
+        <div class="note">
+          <strong>Note:</strong>
+          **Like** को **लिक** मत कहें, सही उच्चारण **लाइक** है।
+          **Sit** को **सीट** मत कहें, सही उच्चारण **सिट** है।
+          **Expire** का सही उच्चारण **एक्सपायर** है, इसे **एक्सपीर** मत बोलें।
+        </div>
+      </div>
+      <div class="letter">
+        <p><strong>J:</strong> /ʤ/ as in July, Jealousy
+          <button onclick="playSound('J')">🔊</button>
+        </p>
+        <h2>J के Phonic Sounds –</h2>
+        <p>J letter का एक Phonic Sound होता है – <strong>‘ज’</strong></p>
+
+        <ul>
+          <li>July – <strong>जुलाय</strong>
+            <button onclick="playSound('July')">🔊</button>
+          </li>
+          <li>Junior – <strong>जूनियर</strong>
+            <button onclick="playSound('Junior')">🔊</button>
+          </li>
+          <li>Jealousy – <strong>जैलसी</strong>
+            <button onclick="playSound('Jealousy')">🔊</button>
+          </li>
+        </ul>
+
+        <div class="note">
+          <strong>Note:</strong>
+          **July** का सही उच्चारण **जुलाय** है, इसे **जूली** मत कहें।
+          **Jealousy** का उच्चारण **जैलसी** करें, इसे **जेलोसी** मत बोलें।
+        </div>
+      </div>
+      <div class="letter">
+        <p><strong>K:</strong> /k/ as in Kite, Bike
+          <button onclick="playSound('K')">🔊</button>
+        </p>
+        <h2>K के Phonic Sounds –</h2>
+        <p>K letter का Phonic Sound <strong>‘क’</strong> होता है।</p>
+
+        <ul>
+          <li>Kite – <strong>काइट</strong>
+            <button onclick="playSound('Kite')">🔊</button>
+          </li>
+          <li>Make – <strong>मेक</strong>
+            <button onclick="playSound('Make')">🔊</button>
+          </li>
+          <li>Bike – <strong>बाइक</strong>
+            <button onclick="playSound('Bike')">🔊</button>
+          </li>
+        </ul>
+
+        <div class="note">
+          <strong>Note:</strong>
+          **Knife** का उच्चारण **नाइफ** होता है, इसे **कनाइफ** मत बोलें।
+          **Knowledge** का सही उच्चारण **नॉलेज** है, **कनॉलेज** नहीं।
+        </div>
+      </div>
+
+      <div class="letter">
+        <p><strong>L:</strong> /l/ as in Level, Play
+          <button onclick="playSound('L')">🔊</button>
+        </p>
+        <h2>L के Phonic Sounds –</h2>
+        <p>L letter का Phonic Sound <strong>‘ल’</strong> होता है।</p>
+
+        <ul>
+          <li>Level – <strong>लैवल</strong>
+            <button onclick="playSound('Level')">🔊</button>
+          </li>
+          <li>Alternate – <strong>ऑल्टरनेट</strong>
+            <button onclick="playSound('Alternate')">🔊</button>
+          </li>
+          <li>Male – <strong>मेल</strong>
+            <button onclick="playSound('Male')">🔊</button>
+          </li>
+          <li>Play – <strong>प्ले</strong>
+            <button onclick="playSound('Play')">🔊</button>
+          </li>
+        </ul>
+
+        <div class="note">
+          <strong>Note:</strong>
+          **Calm** में "L" साइलेंट होता है, सही उच्चारण **काम** है।
+          **Walk** को **वाक** बोलें, **वाल्क** नहीं।
+        </div>
+      </div>
+
+      <div class="letter">
+        <p><strong>M:</strong> /m/ as in Money, Make
+          <button onclick="playSound('M')">🔊</button>
+        </p>
+        <h2>M के Phonic Sounds –</h2>
+        <p>M letter का Phonic Sound <strong>‘म’</strong> होता है।</p>
+
+        <ul>
+          <li>Money – <strong>मनी</strong>
+            <button onclick="playSound('Money')">🔊</button>
+          </li>
+          <li>Make – <strong>मेक</strong>
+            <button onclick="playSound('Make')">🔊</button>
+          </li>
+        </ul>
+
+        <div class="note">
+          <strong>Note:</strong>
+          **Autumn** में "M" साइलेंट होता है, सही उच्चारण **ऑटम** है।
+          **Column** को **कॉलम** बोलें, **कॉलम्न** नहीं।
+        </div>
+      </div>
+
+      <div class="letter">
+        <p><strong>N:</strong> /n/ as in Never, Entry
+          <button onclick="playSound('N')">🔊</button>
+        </p>
+        <h2>N के Phonic Sounds –</h2>
+        <p>N letter का Phonic Sound <strong>‘न’</strong> होता है।</p>
+
+        <ul>
+          <li>Never – <strong>नैवर</strong>
+            <button onclick="playSound('Never')">🔊</button>
+          </li>
+          <li>Entry – <strong>ऐन्ट्री</strong>
+            <button onclick="playSound('Entry')">🔊</button>
+          </li>
+        </ul>
+
+        <div class="note">
+          <strong>Note:</strong>
+          **Autumn** में "N" साइलेंट होता है, सही उच्चारण **ऑटम** है।
+          **Damn** को **डैम** बोलें, **डैम्न** नहीं।
+        </div>
+      </div>
+
+      <div class="letter">
+        <p><strong>O:</strong> /o/ as in Only, More
+          <button onclick="playSound('O')">🔊</button>
+        </p>
+        <h2>O के Phonic Sounds –</h2>
+        <p>O letter के तीन Phonic Sounds होते हैं।</p>
+
+        <ul>
+          <li>ओ – Only (ओन्ली), More (मोर)
+            <button onclick="playSound('Only')">🔊</button>
+          </li>
+          <li>अ – Son (सन), Money (मनी)
+            <button onclick="playSound('Son')">🔊</button>
+          </li>
+          <li>ऑ – Option (ऑपशन), Opportunity (ऑपर्च्यूनिटी)
+            <button onclick="playSound('Option')">🔊</button>
+          </li>
+        </ul>
+
+        <h3>जब भी किसी Word में OO आए, उसके दो sounds आप देखेंगे।</h3>
+        <ul>
+          <li>उ – Wood (वुड), Book (बुक)
+            <button onclick="playSound('Wood')">🔊</button>
+          </li>
+          <li>ऊ – Broom (ब्रूम), Spoon (स्पून)
+            <button onclick="playSound('Broom')">🔊</button>
+          </li>
+        </ul>
+
+        <div class="note">
+          <strong>Note:</strong>
+          **Blood** और **Flood** में "oo" का उच्चारण **अ** होता है, **ब्लड** और **फ्लड** सही है।
+          **Moon** और **School** में "oo" का उच्चारण **ऊ** होता है।
+        </div>
+      </div>
+
+      <div class="letter">
+        <p><strong>P:</strong> /p/ as in Pen, Phone
+          <button onclick="playSound('P')">🔊</button>
+        </p>
+        <h2>P के Phonic Sounds –</h2>
+        <p>P letter के दो Phonic Sounds हैं – पहला <strong>‘प’</strong> और दूसरा <strong>‘फ’</strong>।</p>
+
+        <ul>
+          <li>प – Pen (पैन), Paint (पेन्ट)
+            <button onclick="playSound('Pen')">🔊</button>
+          </li>
+          <li>फ (जब P के साथ H आता है) – Phone (फोन), Photo (फोटो)
+            <button onclick="playSound('Phone')">🔊</button>
+          </li>
+        </ul>
+
+        <div class="note">
+          <strong>Note:</strong>
+          **P** कई शब्दों में **Silent** होता है, जैसे –
+          **Psychology** का उच्चारण **सायकोलॉजी** होता है, **पसायकोलॉजी** नहीं।
+          **Pneumonia** में P साइलेंट होता है, सही उच्चारण **न्यूमोनिया** है।
+        </div>
+      </div>
+
+      <div class="letter">
+        <p><strong>Q:</strong> /kw/ as in Queen, Acquire
+          <button onclick="playSound('Q')">🔊</button>
+        </p>
+        <h2>Q के Phonic Sounds –</h2>
+        <p>Q letter का एक Phonic Sounds <strong>‘क्व’</strong> होता है।</p>
+
+        <ul>
+          <li>Queen – <strong>क्वीन</strong>
+            <button onclick="playSound('Queen')">🔊</button>
+          </li>
+          <li>Acquire – <strong>अक्वायर</strong>
+            <button onclick="playSound('Acquire')">🔊</button>
+          </li>
+        </ul>
+
+        <div class="note">
+          <strong>Note:</strong>
+          **Q** हमेशा **U** के साथ आता है, जैसे **Quick, Quiet, Quit**।
+          **Unique** में "U" का उच्चारण **यु** होता है, **क्व** नहीं।
+        </div>
+      </div>
+
+      <div class="letter">
+        <p><strong>R:</strong> /r/ as in Rest, Revenge
+          <button onclick="playSound('R')">🔊</button>
+        </p>
+        <h2>R के Phonic Sounds –</h2>
+        <p>R letter का Phonic Sound <strong>‘र’</strong> होता है।</p>
+
+        <ul>
+          <li>Rest – <strong>रैस्ट</strong>
+            <button onclick="playSound('Rest')">🔊</button>
+          </li>
+          <li>Revenge – <strong>रिवैन्ज</strong>
+            <button onclick="playSound('Revenge')">🔊</button>
+          </li>
+        </ul>
+
+        <div class="note">
+          <strong>Note:</strong>
+          **British English में "R" कई शब्दों में साइलेंट होता है**, जैसे **Car, Hard, Park**।
+          **American English में "R" स्पष्ट रूप से बोला जाता है।**
+        </div>
+      </div>
+
+      <div class="letter">
+        <p><strong>S:</strong> /s/ or /ʃ/ as in See, Sugar
+          <button onclick="playSound('S')">🔊</button>
+        </p>
+        <h2>S के Phonic Sounds –</h2>
+        <p>S letter के अलग-अलग Phonic Sounds होते हैं – **स (s), श (Sh), श (Su), श (tio)**।</p>
+
+        <h3>स (s)</h3>
+        <ul>
+          <li>See – <strong>सी</strong>
+            <button onclick="playSound('See')">🔊</button>
+          </li>
+          <li>Seven – <strong>सैवन</strong>
+            <button onclick="playSound('Seven')">🔊</button>
+          </li>
+        </ul>
+
+        <h3>श (Sh)</h3>
+        <ul>
+          <li>She – <strong>शी</strong>
+            <button onclick="playSound('She')">🔊</button>
+          </li>
+          <li>Shine – <strong>शाइन</strong>
+            <button onclick="playSound('Shine')">🔊</button>
+          </li>
+        </ul>
+
+        <h3>श (Su)</h3>
+        <ul>
+          <li>Sugar – <strong>शुगर</strong>
+            <button onclick="playSound('Sugar')">🔊</button>
+          </li>
+          <li>Sure – <strong>श्योर</strong>
+            <button onclick="playSound('Sure')">🔊</button>
+          </li>
+        </ul>
+
+        <h3>श (tio)</h3>
+        <ul>
+          <li>Introduction – <strong>इंट्रोडक्शन</strong>
+            <button onclick="playSound('Introduction')">🔊</button>
+          </li>
+          <li>Nation – <strong>नेशन</strong>
+            <button onclick="playSound('Nation')">🔊</button>
+          </li>
+        </ul>
+
+        <div class="note">
+          <strong>Note:</strong>
+          **"S" कई शब्दों में "Z" की तरह बोला जाता है**, जैसे – **Roses (रोज़िज़), Wisdom (विज़डम)**।
+          **"S" कई शब्दों में "Sh" की तरह बोला जाता है**, जैसे – **Sugar (शुगर), Sure (श्योर)**।
+        </div>
+      </div>
+      <div class="letter">
+        <p><strong>T:</strong> /t/ as in Tomato, Tall
+          <button onclick="playSound('T')">🔊</button>
+        </p>
+        <h2>T के Phonic Sounds –</h2>
+        <p>T letter का Phonic Sound <strong>‘ट’</strong> होता है।</p>
+
+        <ul>
+          <li>Tomato – <strong>टमैटो</strong>
+            <button onclick="playSound('Tomato')">🔊</button>
+          </li>
+          <li>Tall – <strong>टॉल</strong>
+            <button onclick="playSound('Tall')">🔊</button>
+          </li>
+        </ul>
+
+        <div class="note">
+          <strong>Note:</strong>
+          **T कई शब्दों में "च" की तरह उच्चारित होता है**, जैसे – **Nation (नेशन), Nature (नेचर), Future (फ्यूचर)**।
+          **T कई शब्दों में साइलेंट होता है**, जैसे **Castle (कैसल), Listen (लिसन)**।
+        </div>
+      </div>
+
+      <div class="letter">
+        <p><strong>U:</strong> /u/ /ʌ/ /ju:/ as in Full, Use
+          <button onclick="playSound('U')">🔊</button>
+        </p>
+        <h2>U के Phonic Sounds –</h2>
+        <p>U letter के चार Phonic Sounds होते हैं – <strong>उ, अ, यौ, यू</strong></p>
+
+        <ul>
+          <li>उ – Full (फुल), Push (पुश)
+            <button onclick="playSound('Full')">🔊</button>
+          </li>
+          <li>अ – Sun (सन), Urgent (अर्जेंट)
+            <button onclick="playSound('Sun')">🔊</button>
+          </li>
+          <li>यौ – Cure (क्यौर), Allure (अल्यौर)
+            <button onclick="playSound('Cure')">🔊</button>
+          </li>
+          <li>यू – University (यूनिवर्सिटी), Use (यूज़)
+            <button onclick="playSound('University')">🔊</button>
+          </li>
+        </ul>
+
+        <div class="note">
+          <strong>Note:</strong>
+          **U कई शब्दों में "यू" की तरह नहीं बल्कि "अ" की तरह उच्चारित होता है**, जैसे – **Umbrella (अम्ब्रेला), Under
+          (अंडर)**।
+          **"U" कई शब्दों में "यु" की तरह बोला जाता है**, जैसे – **Uniform (यूनिफॉर्म), Unique (यूनिक)**।
+        </div>
+      </div>
+
+      <div class="letter">
+        <p><strong>V:</strong> /v/ as in Verify, Value
+          <button onclick="playSound('V')">🔊</button>
+        </p>
+        <h2>V के Phonic Sounds –</h2>
+        <p>V letter का Phonic Sound <strong>‘व’</strong> होता है।</p>
+
+        <ul>
+          <li>Verify – <strong>वैरिफाय</strong>
+            <button onclick="playSound('Verify')">🔊</button>
+          </li>
+          <li>Value – <strong>वैल्यू</strong>
+            <button onclick="playSound('Value')">🔊</button>
+          </li>
+        </ul>
+
+        <div class="note">
+          <strong>Note:</strong>
+          **V और W में अंतर होता है – V बोलते समय ऊपर के दांत निचले होठों से टच करते हैं**।
+          **V का उच्चारण कभी भी "भ" की तरह नहीं होता**।
+          **Wrong: Very (भेरी), Correct: Very (वेरी)**।
+        </div>
+      </div>
+
+      <div class="letter">
+        <p><strong>W:</strong> /w/ as in Well, What
+          <button onclick="playSound('W')">🔊</button>
+        </p>
+        <h2>W के Phonic Sounds –</h2>
+        <p>W letter का Phonic Sound भी <strong>‘व’</strong> होता है।</p>
+
+        <ul>
+          <li>Well – <strong>वैल</strong>
+            <button onclick="playSound('Well')">🔊</button>
+          </li>
+          <li>What – <strong>वौट</strong>
+            <button onclick="playSound('What')">🔊</button>
+          </li>
+        </ul>
+
+        <div class="note">
+          <strong>Note:</strong>
+          **W कुछ शब्दों में साइलेंट होता है**, जैसे – **Write (राइट), Wrong (रॉंग), Sword (सॉर्ड)**।
+          **W कई शब्दों में "उ" की तरह उच्चारित होता है**, जैसे – **One (वन), Once (वन्स)**।
+        </div>
+      </div>
+
+      <div class="letter">
+        <p><strong>X:</strong> /ks/ /z/ as in Box, Example
+          <button onclick="playSound('X')">🔊</button>
+        </p>
+        <h2>X के Phonic Sounds –</h2>
+        <p>X letter के दो Phonic Sounds होते हैं – <strong>‘क्स’ और ‘ज़’</strong></p>
+
+        <ul>
+          <li>क्स – Box (बॉक्स), Extra (ऐक्स्ट्रा)
+            <button onclick="playSound('Box')">🔊</button>
+          </li>
+          <li>ज़ – Example (इग्ज़ैम्पल), Xerox (ज़ीरॉक्स)
+            <button onclick="playSound('Example')">🔊</button>
+          </li>
+        </ul>
+
+        <div class="note">
+          <strong>Note:</strong>
+          **X अक्सर "क्स" की तरह उच्चारित होता है**, लेकिन कुछ शब्दों में "ज़" की तरह आता है, जैसे **Exam (इग्ज़ैम),
+          Exhibit (इग्ज़ीबिट)**।
+        </div>
+      </div>
+
+      <div class="letter">
+        <p><strong>Y:</strong> /j/ as in Yell, Yolk
+          <button onclick="playSound('Y')">🔊</button>
+        </p>
+        <h2>Y के Phonic Sounds –</h2>
+        <p>Y letter का एक Phonic Sound होता है – <strong>‘य’</strong></p>
+
+        <ul>
+          <li>Yell – <strong>यैल</strong>
+            <button onclick="playSound('Yell')">🔊</button>
+          </li>
+          <li>Yolk – <strong>योक</strong>
+            <button onclick="playSound('Yolk')">🔊</button>
+          </li>
+        </ul>
+
+        <div class="note">
+          <strong>Note:</strong>
+          **Y जब किसी शब्द के बीच या अंत में हो, तो कभी-कभी "ई" की तरह उच्चारित होता है**, जैसे – **Happy (हैप्पी), Baby
+          (बेबी)**।
+        </div>
+      </div>
+
+      <div class="letter">
+        <p><strong>Z:</strong> /z/ as in Zoo, Zebra
+          <button onclick="playSound('Z')">🔊</button>
+        </p>
+        <h2>Z के Phonic Sounds –</h2>
+        <p>Z letter का एक Phonic Sound होता है – <strong>‘ज़’</strong></p>
+
+        <ul>
+          <li>Zoo – <strong>ज़ू</strong>
+            <button onclick="playSound('Zoo')">🔊</button>
+          </li>
+          <li>Zebra – <strong>ज़ैब्रा</strong>
+            <button onclick="playSound('Zebra')">🔊</button>
+          </li>
+          <li>Zoom – <strong>ज़ूम</strong>
+            <button onclick="playSound('Zoom')">🔊</button>
+          </li>
+        </ul>
+
+        <div class="note">
+          <strong>Note:</strong>
+          **Z हमेशा "ज़" की तरह उच्चारित होता है, लेकिन कई अंग्रेज़ी बोलियों में "s" की तरह हल्का उच्चारण होता है**, जैसे
+          **Pizza (पीज़ा)**।
+        </div>
+      </div>
+
+    </section>
+    <section>
+      <div class="common-mistakes">
+        <h2>🔹 कुछ ऐसे Words जिन्हें बोलते वक्त हम अक्सर गलती करते हैं। सही उच्चारण और अर्थ –</h2>
+
+        <ul>
+          <li><strong>Is</strong> (इज़) – होता है / है</li>
+          <li><strong>Was</strong> (वॉज़) – था / थी</li>
+          <li><strong>Music</strong> (म्यूज़िक) – संगीत</li>
+          <li><strong>Busy</strong> (बिज़ी) – व्यस्त</li>
+          <li><strong>Always</strong> (ऑल्वेज़) – हमेशा</li>
+          <li><strong>Noise</strong> (नॉइज़) – शोर</li>
+          <li><strong>Zoom</strong> (ज़ूम) – नज़दीक आना / तेज़ी से बढ़ना</li>
+          <li><strong>Has</strong> (हैज़) – के पास है</li>
+          <li><strong>Example</strong> (इग्ज़ैम्पल) – उदाहरण</li>
+          <li><strong>School</strong> (स्कूल) – विद्यालय</li>
+          <li><strong>Smile</strong> (स्माइल) – मुस्कुराना</li>
+          <li><strong>Speak</strong> (स्पीक) – बोलना</li>
+          <li><strong>Name</strong> (नेम) – नाम</li>
+          <li><strong>Game</strong> (गेम) – खेल</li>
+          <li><strong>Fame</strong> (फेम) – प्रसिद्धि</li>
+          <li><strong>Water</strong> (वाटर) – पानी</li>
+          <li><strong>Walk</strong> (वॉक) – चलना</li>
+          <li><strong>Very</strong> (वैरी) – बहुत</li>
+          <li><strong>Sugar</strong> (शुगर) – चीनी</li>
+          <li><strong>Sure</strong> (श्यौर) – निश्चित / पक्का</li>
+          <li><strong>Heart</strong> (हार्ट) – हृदय</li>
+          <li><strong>Hurt</strong> (हर्ट) – चोट लगना</li>
+          <li><strong>Potato</strong> (पटैटो) – आलू</li>
+          <li><strong>Tomato</strong> (टमैटो) – टमाटर</li>
+          <li><strong>Project</strong> (प्रॉजैक्ट) – परियोजना</li>
+          <li><strong>Also</strong> (ऑल्सो) – भी / इसके अलावा</li>
+          <li><strong>Forty</strong> (फॉटी) – चालीस</li>
+          <li><strong>Fourteen</strong> (फोटीन) – चौदह</li>
+          <li><strong>Only</strong> (ओन्ली) – केवल</li>
+          <li><strong>Question</strong> (क्वैश्चन) – प्रश्न</li>
+          <li><strong>Restaurant</strong> (रैस्ट्रॉं) – भोजनालय</li>
+          <li><strong>His</strong> (हिज़) – उसका (पुल्लिंग)</li>
+          <li><strong>Tuesday</strong> (ट्यूज़डे) – मंगलवार</li>
+          <li><strong>Wednesday</strong> (वैन्ज़डे) – बुधवार</li>
+          <li><strong>She</strong> (शी) – वह (स्त्री)</li>
+          <li><strong>Relation</strong> (रिलेशन) – संबंध</li>
+          <li><strong>Towel</strong> (टॉवल) – तौलिया</li>
+          <li><strong>Because</strong> (बिकज़ / बिकॉज़) – क्योंकि</li>
+          <li><strong>Bedsheet</strong> (बैडशीट) – बिस्तर की चादर</li>
+          <li><strong>Glass</strong> (ग्लास) – कांच / गिलास</li>
+          <li><strong>Breakfast</strong> (ब्रैकफस्ट) – नाश्ता</li>
+          <li><strong>Leave</strong> (लीव) – छोड़ना / अवकाश</li>
+          <li><strong>Across</strong> (अक्रॉस) – पार</li>
+          <li><strong>Relative</strong> (रैलैटिव) – रिश्तेदार</li>
+          <li><strong>Equal</strong> (ईक्वल) – बराबर</li>
+          <li><strong>Understand</strong> (अन्डस्टैंड) – समझना</li>
+          <li><strong>Social</strong> (सोशल) – सामाजिक</li>
+          <li><strong>Eyes</strong> (आइज़) – आँखें</li>
+          <li><strong>Nose</strong> (नोज़) – नाक</li>
+          <li><strong>Opposite</strong> (ऑपोज़िट) – विपरीत</li>
+          <li><strong>Punishment</strong> (पनिशमैंट) – सज़ा</li>
+          <li><strong>Preposition</strong> (प्रैपोज़िशन) – पूर्वसर्ग</li>
+          <li><strong>Permanent</strong> (पमानेंन्ट) – स्थायी</li>
+          <li><strong>Government</strong> (गवमैंट) – सरकार</li>
+          <li><strong>Does</strong> (डज़) – करता है / करते हैं</li>
+          <li><strong>Won</strong> (वन) – जीता</li>
+          <li><strong>Year</strong> (यीयर) – वर्ष</li>
+          <li><strong>Never</strong> (नैवर) – कभी नहीं</li>
+          <li><strong>Your</strong> (यौर) – तुम्हारा / आपका</li>
+          <li><strong>My</strong> (माय) – मेरा</li>
+          <li><strong>Days</strong> (डेज़) – दिन</li>
+          <li><strong>Raise</strong> (रेज़) – उठाना</li>
+          <li><strong>Page</strong> (पेज) – पृष्ठ</li>
+          <li><strong>Debt</strong> (डेट) – कर्ज़</li>
+          <li><strong>Subtle</strong> (सब्टल) – सूक्ष्म / महीन</li>
+          <li><strong>Often</strong> (ऑफन) – अक्सर</li>
+          <li><strong>Recipe</strong> (रेसिपी) – विधि / नुस्खा</li>
+          <li><strong>Salon</strong> (सैलॉन) – ब्यूटी पार्लर</li>
+          <li><strong>Vehicle</strong> (व्हीकल) – वाहन</li>
+          <li><strong>Cupboard</strong> (कबर्ड) – अलमारी</li>
+          <li><strong>February</strong> (फेब्रुअरी) – फरवरी</li>
+          <li><strong>Colonel</strong> (कर्नल) – सेना का अधिकारी</li>
+          <li><strong>Genre</strong> (झॉनर) – प्रकार / शैली</li>
+          <li><strong>Ballet</strong> (बैले) – नृत्य कला</li>
+          <li><strong>Choir</strong> (क्वायर) – गायकों का समूह</li>
+          <li><strong>Buffet</strong> (बुफे) – स्वयं-सेवा भोजन</li>
+          <li><strong>Iron</strong> (आयरन) – लोहा</li>
+          <li><strong>Almond</strong> (आमंड) – बादाम</li>
+          <li><strong>Wednesday</strong> (वैन्ज़डे) – बुधवार</li>
+          <li><strong>Pizza</strong> (पीत्ज़ा) – पिज़्ज़ा</li>
+          <li><strong>Dessert</strong> (डिज़र्ट) – मीठा व्यंजन</li>
+          <li><strong>Women</strong> (विमिन) – महिलाएँ</li>
+          <li><strong>Jewelry</strong> (जूलरी) – आभूषण</li>
+        </ul>
+      </div>
+    </section>
+    <section class="instructions">
+      <h2>📖 Instructions for Learning Phonics & Pronunciation</h2>
+      <p>Follow these steps to improve your pronunciation and master English phonics:</p>
+
+      <ol>
+        <li>🔹 **Listen Carefully** – Pay attention to how each letter sounds in different words.</li>
+        <li>🔹 **Practice Daily** – Speak out loud and repeat words multiple times.</li>
+        <li>🔹 **Use a Mirror** – Observe your lip and tongue movements while pronouncing tricky words.</li>
+        <li>🔹 **Break Words into Sounds** – Identify different phonetic sounds in words.</li>
+        <li>🔹 **Learn from Mistakes** – Don't hesitate to correct yourself and improve.</li>
+        <li>🔹 **Use Audio Support** – Listen to native speakers and repeat after them.</li>
+        <li>🔹 **Be Patient & Keep Learning!** – Mastery comes with time and practice.</li>
+      </ol>
+
+      <div class="important-note">
+        <h3>⚠️ Important Note</h3>
+        <p>🔹 English pronunciation can be tricky! Some words sound different from how they are spelled.
+          🔹 Focus on **phonics rules** and **exceptions** to avoid common mistakes.</p>
+      </div>
+
+      <div class="motivation">
+        <h3>🚀 Keep Going! You Can Do It! 💪</h3>
+        <p>Every expert was once a beginner. Stay consistent, practice daily, and soon,
+          you'll speak English **confidently and fluently!** 🌟</p>
+      </div>
+    </section>
+    <section class="comment-section">
+      <h2>💬 Leave a Comment</h2>
+
+      <form id="commentForm">
+        <textarea id="commentInput" placeholder="Write your comment here..." required></textarea>
+        <button type="submit">Post Comment</button>
+      </form>
+
+      <div id="commentList">
+        <!-- Comments will be displayed here -->
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    <p>&copy; 2025 English Learning Website | All Rights Reserved</p>
+  </footer>
+</body>
+
+</html>
